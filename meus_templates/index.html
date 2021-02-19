@@ -1,0 +1,22 @@
+<h1>Olá Mundo</h1>
+
+<ul>
+<li>Item 1</li>
+<li>Item 1</li>
+<li>Item 1</li>
+<li>Item 1</li>
+</ul>
+
+{{ minha_variavel }}
+<br>
+{{nome}}
+
+<ul>
+{% for pessoa in lista %}
+    {% if pessoa.sexo == 'm' %}
+        <li>Olá senhor {{ pessoa.nome }}</li>
+    {% elif pessoa.sexo == 'f'  %}
+        <li>Olá senhora {{ pessoa.nome }}</li>
+    {% endif %}
+{% endfor %}
+</ul>

@@ -15,4 +15,3 @@ def home(request):
 
     data = {'minha_variavel': minha_variavel, 'sexo': sexo, 'nome': nome, 'lista': lista}
     return render(request, 'index.html', data)
-

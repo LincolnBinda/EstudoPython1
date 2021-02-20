@@ -8,8 +8,6 @@ class ClienteAdmin(admin.ModelAdmin):
     list_filter = ('departamentos', )
     search_fields = ('id', 'name', 'email', 'departamentos__nome')
 
-
-
 admin.site.register(Cliente, ClienteAdmin)
 admin.site.register(Telefone)
 admin.site.register(CPF)

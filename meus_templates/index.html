@@ -1,22 +1,38 @@
-<h1>Olá Mundo</h1>
 
-<ul>
-<li>Item 1</li>
-<li>Item 1</li>
-<li>Item 1</li>
-<li>Item 1</li>
-</ul>
 
-{{ minha_variavel }}
-<br>
-{{nome}}
+{% extends "base.html" %}
 
-<ul>
-{% for pessoa in lista %}
-    {% if pessoa.sexo == 'm' %}
-        <li>Olá senhor {{ pessoa.nome }}</li>
-    {% elif pessoa.sexo == 'f'  %}
-        <li>Olá senhora {{ pessoa.nome }}</li>
-    {% endif %}
-{% endfor %}
-</ul>
+{% block title %} Página Inicial {% endblock %}
+
+
+{% block main %}
+    <h1 class="minha_classe">Olá Mundo</h1>
+
+    <ul>
+    <li>Item 1</li>
+    <li>Item 1</li>
+    <li>Item 1</li>
+    <li>Item 1</li>
+    </ul>
+
+    {{ minha_variavel }}
+    <br>
+    {{nome}}
+
+    <ul>
+    {% for pessoa in lista %}
+        {% if pessoa.sexo == 'm' %}
+            <li>Olá senhor {{ pessoa.nome }}</li>
+        {% elif pessoa.sexo == 'f'  %}
+            <li>Olá senhora {{ pessoa.nome }}</li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+
+    <button class="btn btn-danger" onclick="olaMundo()">Clique Aqui!</button>
+
+{%  endblock %}
+
+{% block footer %}
+    {% include "footer.html" with pnome=nome %}
+{% endblock %}
